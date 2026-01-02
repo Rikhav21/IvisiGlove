@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InvisiGlove</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="hero">
+  <h1>InvisiGlove</h1>
+  <p>A glove that turns your hand into an input device</p>
+</header>
+
+<main class="container">
+
+  <section>
+    <h2>Overview</h2>
+    <p>
+      InvisiGlove is a wearable glove built using flex sensors, a gyroscope,
+      and an accelerometer that can track the exact position and movement
+      of your hand at all times.
+    </p>
+
+    <p>
+      This enables some pretty interesting use cases — an invisible keyboard,
+      a mouse, game control, or essentially any custom input device you want
+      for your laptop. Conceptually, it’s similar to the Nintendo Wii controllers,
+      but with far more detail and designed to fit directly to your hand.
+    </p>
+
+    <p>
+      To build this project, I used:
+    </p>
+
+    <ul>
+      <li>Raspberry Pi</li>
+      <li>Gyroscope</li>
+      <li>Accelerometer</li>
+      <li>Li-Po battery</li>
+      <li>Bluetooth module</li>
+      <li>Flex sensors</li>
+    </ul>
+
+    <p>
+      While some people have successfully DIYed flex sensors, my past attempts
+      were usually unreliable. This time, I decided to use commercial flex sensors
+      for consistency. Most of the components are fairly flexible and were chosen
+      largely based on what I already had available.
+    </p>
+
+    <img src="CONCEPT.png" alt="InvisiGlove Concept Diagram" />
+  </section>
+
+  <section>
+    <h2>The Wiring</h2>
+    <p>
+      The wiring is fairly straightforward. The flex sensors are connected to
+      GPIO pins 26, 27, and 28, each with a pull-up resistor to ground and powered
+      from 3.3V.
+    </p>
+
+    <p>
+      The gyroscope is connected using pins 0 and 1. This setup allows the system
+      to read both finger bending and hand orientation simultaneously.
+    </p>
+
+    <div class="image-grid">
+      <img src="imgs/full.png" alt="Full wiring setup" />
+      <img src="imgs/schem.png" alt="Wiring schematic" />
+    </div>
+  </section>
+
+  <section>
+    <h2>The Setup</h2>
+    <p>
+      After wiring everything up, you can upload the <code>final.py</code> script
+      to the Raspberry Pi. From there, the sensitivity of the flex sensors can be
+      adjusted to reliably differentiate between bent and straight fingers.
+    </p>
+
+    <p>
+      Once calibrated, I pulled a glove over the electronics and fitted it to my hand.
+      At that point, the glove becomes whatever you code it to be — the behavior is
+      entirely software-defined.
+    </p>
+
+    <div class="image-grid">
+      <img src="imgs/front.png" alt="Front view of glove" />
+      <img src="imgs/glove.png" alt="Glove worn on hand" />
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    Built by Rikhav •
+    <a href="https://github.com/Rikhav21/IvisiGlove" target="_blank">
+      View on GitHub
+    </a>
+  </p>
+</footer>
+
+</body>
+</html>
